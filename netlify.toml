@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[headers]]
+  for = "/assets/fonts/*.ttf"
+
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "font/ttf"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
